@@ -1,3 +1,9 @@
+<% if user_signed_in? %>
+    <p class="intro"> Hello <%= current_user.name %> <br/> 
+    <span>Share your inspiration and see what's inspiring others</span>
+    </p>
+<% end %>
+
 <% @posts.each do |post| %>
 <h2><%= link_to post.title, post %></h2>
 <%= link_to (image_tag post.image.url(:small)) %>
